@@ -11,7 +11,7 @@ const CounterState = () => {
     return (
         <div className="cpt">
             <p>Counter: {counter}</p>
-            <button className='button' onClick={handleClick}>Reset</button>
+            <button className='button' onClick={handleClick}>Click</button>
         </div>
     );
 };

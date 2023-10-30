@@ -1,6 +1,7 @@
 import AfficherNom from './AfficherNom'
 import CounterState from './Counter'
 import NamesList from './List'
+import NameForm from './NameForm'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <AfficherNom />
         <CounterState />
         <NamesList />
+        <NameForm />
     </div>
   )
 }
