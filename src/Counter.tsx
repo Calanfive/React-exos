@@ -10,9 +10,8 @@ const CounterState = () => {
 
     return (
         <div className="cpt">
-            <p>Counter</p>
-            <p>{counter}</p>
-            <button onClick={handleClick}>Reset</button>
+            <p>Counter: {counter}</p>
+            <button className='button' onClick={handleClick}>Reset</button>
         </div>
     );
 };

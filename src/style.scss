@@ -1,5 +1,23 @@
 @import "variables";
 
-.hello {
-    color: $color
+body {
+    background-color: rgb(198, 212, 255);
+
+    .hello {
+        color: $titlecolor;
+        font-size: $title-size;
+        font-weight: bold;
+    }
+    
+    .cpt {
+        font-size: $cpt-size;
+
+        .button {
+            background-color: rgb(255, 206, 128);
+        }
+    }
+
+    .Textblue {
+        color: blue;
+    }
 }
