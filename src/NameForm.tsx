@@ -28,9 +28,11 @@ function NameForm() {
         <form className="formulR">
             <label htmlFor="label">Nom </label>
             <input type="text" name='label' onChange={handleChangeName} />
-            <p>{name.charAt(0).toUpperCase() + name.slice(1)}</p>
-            <input type="color" onChange={handleChangeColor} />
-            <p>{color}</p>
+            <p style={{color}}>{name.toUpperCase()}</p> 
+            <p> Couleur
+                <input type="color" onChange={handleChangeColor} />
+                <p>{color}</p>
+            </p>
         </form>
       </>
     )
