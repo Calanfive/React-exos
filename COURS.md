@@ -275,6 +275,38 @@ const ProfName = () => {
 }
 ```
 
+Cycle de vie d'un composant
+onMount
+quand t'as un , [] ça rend le useEffect effectif seulement au mount du composant :
+```tsx
+useEffect (() => {
+        if (todos.length > 0) {
+            localStorage.setItem("tache", JSON.stringify(todos))
+        }
+    }, [])
+```
+
+onMount et Update
+quand t'as quelque chose dans la dépendance, ça rend le useEffect effectif au mount du composant et à l'update de l'état dans la dépendance : 
+```tsx
+useEffect (() => {
+        if (todos.length > 0) {
+            localStorage.setItem("tache", JSON.stringify(todos))
+        }
+    }, [todos])
+```
+
+onUnmount
+pour rendre le useEffect effectif à la suppression du composant faut juste avoir un return dans le useEffect :
+```tsx
+useEffect (() => {
+        if (todos.length > 0) {
+            localStorage.setItem("tache", JSON.stringify(todos))
+        }
+        return () => {fais quelque chose à la suppression}
+    }, [])
+```
+
 ### Le jsx
 
 class => className
