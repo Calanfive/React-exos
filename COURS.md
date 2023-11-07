@@ -2,9 +2,9 @@
 
 ## Introduction
 
-Nous avons utilisÃ© le javascript Vanilla pour dynamiser le front-end.
-Cependant, il existe des frameworks qui permettent de faciliter le dÃ©veloppement front-end.
-Les frameworks sont des bibliothÃ¨ques de fonctions qui permettent de dÃ©velopper plus rapidement et plus facilement.
+Nous avons utilisé le javascript Vanilla pour dynamiser le front-end.
+Cependant, il existe des frameworks qui permettent de faciliter le développement front-end.
+Les frameworks sont des bibliothèques de fonctions qui permettent de développer plus rapidement et plus facilement.
 
 En Javascript, on ne peut pas rafraichir une interface toutes les x millisecondes.
 On utilise des techniques pour modifier le DOM sans rafraichir la page et on essaye de le faire le moins souvent possible.
@@ -19,49 +19,49 @@ Il existe plusieurs frameworks JS, les plus connus sont :
 - Vue
 - Svelte
 
-C'est la nouvelle gÃ©nÃ©ration des frameworks JS, ils sont basÃ©s sur le DOM virtuel.
+C'est la nouvelle génération des frameworks JS, ils sont basés sur le DOM virtuel.
 
-Avant cela, il y avait les frameworks JS basÃ©s sur le DOM rÃ©el :
+Avant cela, il y avait les frameworks JS basés sur le DOM réel :
 - EmberJS
 - angularJS
 - BackboneJS
 - KnockoutJS
 - hammerJS
 
-et avant Ã§a :
+et avant ça :
 - jQuery
 - MooTools
 
-### Les frameworks JS basÃ©s sur le DOM virtuel
+### Les frameworks JS basés sur le DOM virtuel
 
-On ne va pas trop s'attarder dessus, car un TP est prÃ©vu pour les dÃ©couvrir un par un.
-Nous allons cependant acquÃ©rir la base de ces frameworks grÃ¢ce Ã  React.
+On ne va pas trop s'attarder dessus, car un TP est prévu pour les découvrir un par un.
+Nous allons cependant acquérir la base de ces frameworks grâce à React.
 
 ## Bases communes aux frameworks JS
 
 ### Le DOM virtuel
 
-Le DOM virtuel est une copie du DOM rÃ©el, il est stockÃ© en mÃ©moire.
-Il est plus rapide Ã  modifier que le DOM rÃ©el.
-Il est utilisÃ© par les frameworks JS pour modifier le DOM rÃ©el.
+Le DOM virtuel est une copie du DOM réel, il est stocké en mémoire.
+Il est plus rapide à modifier que le DOM réel.
+Il est utilisé par les frameworks JS pour modifier le DOM réel.
 
 ### Les composants
 
-Les composants sont des Ã©lÃ©ments qui permettent de dÃ©couper l'interface en plusieurs parties.
-Ils sont rÃ©utilisables et peuvent Ãªtre imbriquÃ©s les uns dans les autres.
-On peut imaginer que les balises HTML sont des composants avec de l'affichage, des comportements et des styles par dÃ©faut.
+Les composants sont des éléments qui permettent de découper l'interface en plusieurs parties.
+Ils sont réutilisables et peuvent être imbriqués les uns dans les autres.
+On peut imaginer que les balises HTML sont des composants avec de l'affichage, des comportements et des styles par défaut.
 
 ## Les composants
 
-### FonctionnalitÃ©s
+### Fonctionnalités
 
 - nom
 - etat
-- propriÃ©tÃ©s
-- donnÃ©es calculÃ©es
-- des mÃ©thodes de cycle de vie
-    - crÃ©ation
-    - mise Ã  jour
+- propriétés
+- données calculées
+- des méthodes de cycle de vie
+    - création
+    - mise à jour
     - destruction
 - comportement / actions / handlers
 - affichage / rendu
@@ -77,7 +77,7 @@ npm init vite@latest
 
 React + Typescript
 
-ElÃ¨ve - Qu'il est beau ce projet React ! Attends quoi un fichier .tsx ?
+Elève - Qu'il est beau ce projet React ! Attends quoi un fichier .tsx ?
 Prof - Oui, c'est du Typescript + JSX. JSX est une extension de syntaxe pour React.
 
 ### Notre premier composant
@@ -116,7 +116,7 @@ const App = () => {
 export default App;
 ```
 
-### Les propriÃ©tÃ©s
+### Les propriétés
 
 ```tsx
 import React from 'react';
@@ -124,7 +124,7 @@ import React from 'react';
 const ProfName = (props) => {
     return (
         <div>
-            <h1>PrÃ©nom du prof : {props.name}</h1>
+            <h1>Prénom du prof : {props.name}</h1>
         </div>
     );
 };
@@ -146,7 +146,7 @@ const App = () => {
 export default App;
 ```
 
-### Les Ã©tats
+### Les états
 
 ```tsx
 import { useState } from 'react';
@@ -156,7 +156,7 @@ const ProfName = (props) => {
 
     return (
         <div>
-            <h1>PrÃ©nom du prof : {name}</h1>
+            <h1>Prénom du prof : {name}</h1>
         </div>
     );
 };
@@ -165,7 +165,7 @@ export default ProfName;
 
 ```
 
-### Les donnÃ©es calculÃ©es
+### Les données calculées
 
 ```tsx
 import { useState } from 'react';
@@ -180,7 +180,7 @@ const ProfName = (props) => {
 
     return (
         <div>
-            <h1>PrÃ©nom du prof : {upperCaseName}</h1>
+            <h1>Prénom du prof : {upperCaseName}</h1>
         </div>
     );
 };
@@ -189,7 +189,7 @@ export default ProfName;
 
 ```
 
-### Les Ã©vÃ¨nements
+### Les évènements
 
 ```tsx
 import { useState, useCallback } from 'react';
@@ -209,7 +209,7 @@ const ProfName = (props) => {
 
     return (
         <div>
-            <h1>PrÃ©nom du prof : {upperCaseName}</h1>
+            <h1>Prénom du prof : {upperCaseName}</h1>
             <button onClick={handleClick}>Reset</button>
         </div>
     );
@@ -219,11 +219,67 @@ export default ProfName;
 
 ```
 
+### Les méthodes de cycle de vie
+
+Onmount
+
+```tsx
+import { useState, useEffect } from 'react';
+
+const ProfName = () => {
+    useEffect(() => {
+        console.log('Le composant a été créé');
+    }, []);
+
+    return <div>
+        <h1>Prénom du prof : Thomas</h1>
+    </div>
+}
+```
+
+onupdate / onchange
+
+```tsx
+import { useState, useEffect } from 'react';
+
+const ProfName = () => {
+    const [name, setName] = useState('thomas');
+
+    useEffect(() => {
+        console.log('L etat name a changé');
+    }, [name]);
+
+    return <div>
+        <h1>Prénom du prof : {name}</h1>
+    </div>
+}
+```
+
+onunmount
+
+```tsx
+import { useState, useEffect } from 'react';
+
+const ProfName = () => {
+    useEffect(() => {
+        console.log('Le composant a été créé');
+
+        return () => {
+            console.log('Le composant est détruit');
+        };
+    }, []);
+
+    return <div>
+        <h1>Prénom du prof : Thomas</h1>
+    </div>
+}
+```
+
 ### Le jsx
 
 class => className
 ```tsx
-<h1 className="title">PrÃ©nom du prof : {upperCaseName}</h1>
+<h1 className="title">Prénom du prof : {upperCaseName}</h1>
 ```
 
 style="background-color: blue;" => style={{ backgroundColor: 'blue' }}
